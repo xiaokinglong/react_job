@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route }  from 'react-router-dom';
 
 
-// tips: 自定义的导入
+// tips: 导入自定义的组件
 import Demo from '../page/demo'
 const Routers = () => {
   return (
