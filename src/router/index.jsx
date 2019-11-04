@@ -23,7 +23,12 @@ class Routers extends Component {
 					<Switch>
 						<Route path="/login" component={Login} exact />
 						<Route path="/register" component={Register} exact />
-						<Route path="/admin" component={Admin} exact></Route>
+						<Admin>
+							<Route path="/admin/index" exact component={IndexData} />
+							<Route path="/notFound" component={NotFound} />
+							<Redirect to="/notFound" />
+						</Admin>
+						{/* <Route path="/admin" component={Admin} exact></Route> */}
 						{/* tips: 这里是404的页面 */}
 						<Route path="/notFound" component={NotFound} />
 						<Redirect to="/notFound" />

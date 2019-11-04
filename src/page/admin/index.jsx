@@ -16,7 +16,6 @@ class Admin extends Component {
 		};
 	}
 	componentWillMount() {}
-
 	// tips: 切换
 	toggleCollapsed = () => {
 		console.log(this.state.collapsed);
