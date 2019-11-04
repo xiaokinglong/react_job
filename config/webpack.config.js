@@ -51,6 +51,8 @@ const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 const lessRegex = /\.(less)$/;
 const lessModuleRegex = /\.module\.(less)$/;
+// tips: 包分析插件
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
@@ -537,6 +539,7 @@ module.exports = function(webpackEnv) {
       ],
     },
     plugins: [
+      new BundleAnalyzerPlugin(),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(

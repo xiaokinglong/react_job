@@ -1,0 +1,16 @@
+$my-color: blue;
+@mixin colors($my-color: blue) {
+  background-color: $my-color;
+  @content;
+  border-color: $my-color;
+}
+
+.back {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+.back > div{
+  color: $my-color;
+  @include colors { color: $my-color; }
+}
