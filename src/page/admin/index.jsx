@@ -5,6 +5,8 @@ import { Layout, Icon, Menu } from 'antd';
 import './index.scss';
 import User from '../../component/user';
 
+import { isMobile } from '../../tool'
+
 // const { SubMenu } = Menu;
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -12,10 +14,27 @@ class Admin extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			collapsed: false
+			collapsed: true,
+			ismobile: false
 		};
 	}
-	componentWillMount() {}
+	componentWillMount() {
+		const flag = isMobile()
+		if(flag) {
+			this.setState({
+				ismobile: true
+			})
+		}
+	}
+	// static getDerivedStateFromProps() {
+	// 	// 在挂载阶段和更新阶段都会被执行
+	// 	console.log('demo')
+	// 	return null;
+	// }
+	// getSnapshotBeforeUpdate() {
+
+	// 	return true
+	// }
 	// tips: 切换
 	toggleCollapsed = () => {
 		console.log(this.state.collapsed);
@@ -27,7 +46,10 @@ class Admin extends Component {
 	render() {
 		return (
 			<Layout className="admin">
-				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
+				<Sider zeroWidthTriggerStyle={{
+					position: "absolute",
+					top: 0
+				}} trigger={null} collapsedWidth={this.state.ismobile ? 0: 80} collapsible collapsed={this.state.collapsed}>
 					<div className="logo" />
 					<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '1' ]}>
 						<Menu.Item key="1">
