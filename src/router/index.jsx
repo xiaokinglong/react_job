@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
@@ -41,7 +42,6 @@ class Routers extends Component {
 	
 	render() {
 		return (
-			<div>
 				<Router>
 					<Switch>
 						<Route path="/login" component={Login} exact />
@@ -59,7 +59,6 @@ class Routers extends Component {
 						<Redirect to="/notFound" />
 					</Switch>
 				</Router>
-			</div>
 		);
 	}
 }

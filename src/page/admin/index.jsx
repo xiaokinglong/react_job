@@ -26,15 +26,7 @@ class Admin extends Component {
 			})
 		}
 	}
-	// static getDerivedStateFromProps() {
-	// 	// 在挂载阶段和更新阶段都会被执行
-	// 	console.log('demo')
-	// 	return null;
-	// }
-	// getSnapshotBeforeUpdate() {
-
-	// 	return true
-	// }
+	
 	// tips: 切换
 	toggleCollapsed = () => {
 		console.log(this.state.collapsed);
@@ -46,10 +38,7 @@ class Admin extends Component {
 	render() {
 		return (
 			<Layout className="admin">
-				<Sider zeroWidthTriggerStyle={{
-					position: "absolute",
-					top: 0
-				}} trigger={null} collapsedWidth={this.state.ismobile ? 0: 80} collapsible collapsed={this.state.collapsed}>
+				<Sider trigger={null} collapsedWidth={this.state.ismobile ? 0: 80} collapsible collapsed={this.state.collapsed}>
 					<div className="logo" />
 					<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '1' ]}>
 						<Menu.Item key="1">
@@ -80,8 +69,7 @@ class Admin extends Component {
 					<Content
 						style={{
 							margin: '24px 16px',
-							padding: 24,
-							background: '#fff',
+							padding: 0,
 							minHeight: 280
 						}}
 					>
